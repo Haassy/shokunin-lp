@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manus Shokunin Project (Cohort 1) — Build an app in two months, and ship it</title>
+<meta name="description" content="No coding experience needed. A small-cohort program (5 seats) where you build an app with Manus over two months and ship it publicly. Applications close Aug 20.">
+<!-- OGP: デプロイ後、og:url と og:image を公開URLの絶対URLに書き換えること -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Manus Shokunin Project (Cohort 1) — Build an app in two months, and ship it">
+<meta property="og:description" content="No coding experience needed. A small-cohort program (5 seats) where you build an app with Manus over two months and ship it publicly. Applications close Aug 20.">
+<meta property="og:url" content="https://haassy.github.io/shokunin-lp/en/">
+<meta property="og:image" content="https://haassy.github.io/shokunin-lp/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Libre+Baskerville:wght@400;700&display=swap">
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #FBFBFA; color: #34322D; font-family: 'Noto Sans JP', sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #4F6171; text-decoration: none; }
+a:hover { color: #3A4855; }
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-plus { transform: rotate(45deg); }
+@media (max-width: 860px) {
+  .hero-vertical { display: none; }
+  .hero-h1 { padding-right: 0 !important; }
+}
+@media (max-width: 640px) {
+  [style*="padding: 96px 32px"], [style*="padding:96px 32px"] { padding: 56px 20px !important; }
+  [style*="padding: 56px 32px"], [style*="padding:56px 32px"] { padding: 40px 20px !important; }
+  .site-header { padding: 12px 20px !important; }
+  .header-logo, .header-divider { display: none !important; }
+  .header-title { font-size: 15px !important; }
+  .header-cta { padding: 8px 14px !important; font-size: 12px !important; }
+  [style*="position: fixed; bottom: 0"] { gap: 12px !important; padding: 10px 12px !important; }
+  [style*="position: fixed; bottom: 0"] span { font-size: 13px !important; }
+  [style*="position: fixed; bottom: 0"] a { padding: 8px 14px !important; font-size: 12px !important; white-space: nowrap; }
+}
+.faq-plus { transition: transform .2s ease; }
+[style*="Shippori Mincho"] { font-family: 'Libre Baskerville', Georgia, serif !important; }
+
+[hidden] { display: none !important; }
+.header-cta:hover, .btn-dark:hover { background: #3A4855 !important; color: #FBFBFA !important; }
+.btn-light:hover { background: #EEF2F5 !important; color: #3A4855 !important; }
+.link-underline:hover { color: #4F6171 !important; border-bottom-color: #4F6171 !important; }
+.link-light:hover { color: #FBFBFA !important; border-bottom-color: #FBFBFA !important; }
+</style>
+</head>
+<body>
+<div style="min-width: 320px">
+
+<!-- ナビ -->
+<header class="site-header" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 32px; background: rgba(250,249,246,.92); backdrop-filter: blur(8px); border-bottom: 1px solid #E2E6E9">
+  <div style="display: flex; align-items: center; gap: 14px">
+    <img class="header-logo" src="../assets/manus-fellow-logo.png" alt="manus | fellow" style="height: 24px; width: auto; display: block">
+    <span class="header-divider" style="width: 1px; height: 20px; background: #D4DADE"></span>
+    <span class="header-title" style="font-family: 'Shippori Mincho B1', serif; font-weight: 700; font-size: 16px; letter-spacing: .08em; white-space: nowrap">Manus Shokunin Project<span style="margin-left: 8px; font-size: 12px; color: #8A939B">Cohort 1</span></span>
+  </div>
+  <div style="display: flex; align-items: center; gap: 14px; flex-shrink: 0">
+    <a href="../" class="link-underline" style="font-size: 13px; font-weight: 500; letter-spacing: .06em; color: #4F6171; border-bottom: 1px solid #C5CDD4; padding-bottom: 2px; white-space: nowrap">日本語</a>
+    <a class="header-cta" href="#apply" style="display: inline-block; flex-shrink: 0; background: #4F6171; color: #FBFBFA; font-size: 15px; font-weight: 700; letter-spacing: .1em; padding: 10px 22px; border-radius: 2px">Apply</a>
+  </div>
+</header>
+
+<!-- ヒーロー -->
+<section data-screen-label="ヒーロー" style="position: relative; max-width: 1080px; margin: 0 auto; padding: 96px 32px 88px; overflow: hidden">
+  <div class="hero-vertical" style="position: absolute; top: 72px; right: 32px; writing-mode: vertical-rl; font-family: 'Shippori Mincho B1', serif; font-size: 21px; font-weight: 600; letter-spacing: .42em; color: #4F6171">COHORT 1 OPEN</div>
+  <p style="margin: 0 0 28px; font-family: 'Libre Baskerville', serif; font-size: 13px; letter-spacing: .32em; color: #8A939B">MANUS SHOKUNIN PROJECT</p>
+  <h1 class="hero-h1" style="margin: 0; padding-right: 72px; font-family: 'Shippori Mincho B1', serif; font-weight: 800; font-size: clamp(40px, 7vw, 76px); line-height: 1.28; letter-spacing: .02em; text-wrap: pretty">From AI user<br>to AI <span style="color: #4F6171">maker</span>.</h1>
+  <p style="margin: 32px 0 0; max-width: 560px; font-size: 19px; line-height: 2; color: #4C555D">In two months, build the app you have in mind — and release it to the world.<br>No coding experience required.</p>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 44px">
+    <a href="#apply" class="btn-dark" style="display: inline-block; background: #4F6171; color: #FBFBFA; font-size: 17px; font-weight: 700; letter-spacing: .12em; padding: 16px 40px; border-radius: 2px">Go to application form</a>
+    <a href="#about" class="link-underline" style="display: inline-block; font-size: 16px; font-weight: 500; letter-spacing: .1em; color: #34322D; border-bottom: 1px solid #34322D; padding-bottom: 2px">See the program</a>
+  </div>
+  <div style="display: flex; flex-wrap: wrap; gap: 32px; margin-top: 64px; padding-top: 28px; border-top: 1px solid #E2E6E9; font-size: 15px; color: #67717A; letter-spacing: .06em">
+    <span>Dates　Aug 29 – Oct 24, 2026</span>
+    <span>Seats　5</span>
+    <span style="color: #4F6171; font-weight: 700">Apply by　Aug 20 (Thu)</span>
+  </div>
+</section>
+
+<!-- 銅版画イメージ -->
+<div data-screen-label="ヒーロービジュアル" style="border-top: 1px solid #E2E6E9">
+  <img src="../assets/hero-shibuya.jpg" alt="Shibuya Scramble Crossing" style="display: block; width: 100%; height: 440px; object-fit: cover">
+</div>
+
+<!-- マニフェスト -->
+<section data-screen-label="マニフェスト" style="background: #34322D; color: #FBFBFA">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+    <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: clamp(26px, 3.8vw, 40px); font-weight: 700; line-height: 1.9; letter-spacing: .04em; text-wrap: pretty">You use AI every day.<br>But that may still be consumption.</p>
+    <p style="margin: 40px 0 0; max-width: 640px; font-size: 17px; line-height: 2.2; color: #C5CDD4">You write a prompt, you use what comes back. That alone is genuinely useful. But taking the idea in your head, giving it a shape, and putting it in someone else’s hands — that part is still out of reach. Once you move to the making side, your understanding of AI deepens. You start to feel what it can and cannot do, and the thing you imagined becomes something people actually use.</p>
+    <p style="margin: 40px 0 0; font-size: 17px; line-height: 2; color: #FBFBFA"><span style="border-bottom: 1px solid #4F6171; padding-bottom: 4px">The Manus Shokunin Project is those first two months.</span></p>
+    <p style="margin: 28px 0 0; max-width: 640px; font-size: 15px; line-height: 2; color: #8A939B; font-style: italic">Shokunin (職人): the craftsman’s mindset — the pursuit of depth and mastery in one’s work, beyond mere technical skill.</p>
+  </div>
+</section>
+
+<!-- 01 概要 -->
+<section id="about" data-screen-label="概要" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+  <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+    <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">01</span>
+    <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">Program overview</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: #E2E6E9; border: 1px solid #E2E6E9">
+    <div style="background: #FBFBFA; padding: 36px 28px">
+      <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 40px; font-weight: 800">2<span style="font-size: 20px; margin-left: 4px">months</span></p>
+      <p style="margin: 12px 0 0; font-size: 15px; color: #67717A; line-height: 1.8">From the Aug 29 kickoff to the Oct 24 final showcase</p>
+    </div>
+    <div style="background: #FBFBFA; padding: 36px 28px">
+      <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 40px; font-weight: 800">5<span style="font-size: 20px; margin-left: 4px">seats</span></p>
+      <p style="margin: 12px 0 0; font-size: 15px; color: #67717A; line-height: 1.8">Small enough to stay close to every participant</p>
+    </div>
+    <div style="background: #FBFBFA; padding: 36px 28px">
+      <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 40px; font-weight: 800">15<span style="font-size: 20px; margin-left: 4px">min/week</span></p>
+      <p style="margin: 12px 0 0; font-size: 15px; color: #67717A; line-height: 1.8">A 1-on-1 review with the Fellow, online</p>
+    </div>
+    <div style="background: #FBFBFA; padding: 36px 28px">
+      <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 40px; font-weight: 800">Ship<span style="font-size: 20px; margin-left: 4px">it publicly</span></p>
+      <p style="margin: 12px 0 0; font-size: 15px; color: #67717A; line-height: 1.8">Build with Manus, all the way to public release</p>
+    </div>
+  </div>
+  <p style="margin: 28px 0 0; padding: 20px 24px; background: #EEF2F5; font-size: 15px; line-height: 2; color: #4C555D"><strong style="color: #4F6171">What “published” means</strong>　For a web app, a release anyone can access; for an iOS app, distribution via TestFlight (Apple’s official beta channel). Completing at least one app through to public release is the graduation bar.</p>
+</section>
+
+<!-- 02 進め方 -->
+<section data-screen-label="進め方" style="background: #EEF2F5">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+      <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">02</span>
+      <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">How the two months work</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+      <div style="background: #FBFBFA; padding: 40px 32px; border-top: 3px solid #4F6171">
+        <p style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">STEP 01<span style="margin-left: 12px; color: #8A939B">FIRST HALF</span></p>
+        <h3 style="margin: 20px 0 0; font-family: 'Shippori Mincho B1', serif; font-size: 24px; font-weight: 700; letter-spacing: .04em">Ship two small apps</h3>
+        <p style="margin: 16px 0 0; font-size: 16px; line-height: 2; color: #4C555D">You build two small apps and take both all the way to public release. The point is to run the whole make-and-ship loop early, at least once.</p>
+      </div>
+      <div style="background: #FBFBFA; padding: 40px 32px; border-top: 3px solid #4F6171">
+        <p style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">STEP 02<span style="margin-left: 12px; color: #8A939B">SECOND HALF</span></p>
+        <h3 style="margin: 20px 0 0; font-family: 'Shippori Mincho B1', serif; font-size: 24px; font-weight: 700; letter-spacing: .04em">Build your signature piece</h3>
+        <p style="margin: 16px 0 0; font-size: 16px; line-height: 2; color: #4C555D">You choose the thing you genuinely want to put into the world and start on your signature piece, taking it to release quality with the Fellow’s review each week.</p>
+      </div>
+      <div style="background: #FBFBFA; padding: 40px 32px; border-top: 3px solid #4F6171">
+        <p style="margin: 0; font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">STEP 03<span style="margin-left: 12px; color: #8A939B">FINAL STRETCH</span></p>
+        <h3 style="margin: 20px 0 0; font-family: 'Shippori Mincho B1', serif; font-size: 24px; font-weight: 700; letter-spacing: .04em">Improve it after launch</h3>
+        <p style="margin: 16px 0 0; font-size: 16px; line-height: 2; color: #4C555D">Once your signature piece is live, you ship at least one improvement based on what real users tell you. Building it is not where this ends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 こんな人に -->
+<section data-screen-label="こんな人に" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+  <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+    <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">03</span>
+    <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">Who this is for</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px">
+    <div>
+      <p style="margin: 0 0 20px; font-size: 15px; font-weight: 700; letter-spacing: .16em; color: #4F6171">A good fit if you…</p>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex-shrink: 0; margin-top: 2px; color: #4F6171; font-family: 'Shippori Mincho B1', serif">◆</span><p style="margin: 0; font-size: 17px; line-height: 1.9">Have an idea in your head you want to give a shape to</p></div>
+        <div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex-shrink: 0; margin-top: 2px; color: #4F6171; font-family: 'Shippori Mincho B1', serif">◆</span><p style="margin: 0; font-size: 17px; line-height: 1.9">Already use Manus and want to take one step further</p></div>
+        <div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex-shrink: 0; margin-top: 2px; color: #4F6171; font-family: 'Shippori Mincho B1', serif">◆</span><p style="margin: 0; font-size: 17px; line-height: 1.9">Can set aside building time each week for two months</p></div>
+        <div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex-shrink: 0; margin-top: 2px; color: #4F6171; font-family: 'Shippori Mincho B1', serif">◆</span><p style="margin: 0; font-size: 17px; line-height: 1.9">Can ship before it is perfect, then improve from real reactions</p></div>
+      </div>
+    </div>
+    <div>
+      <p style="margin: 0 0 20px; font-size: 15px; font-weight: 700; letter-spacing: .16em; color: #8A939B">Probably not a fit if you…</p>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex-shrink: 0; margin-top: 2px; color: #C5CDD4">—</span><p style="margin: 0; font-size: 17px; line-height: 1.9; color: #67717A">Are looking for a course you simply watch and learn from</p></div>
+        <div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex-shrink: 0; margin-top: 2px; color: #C5CDD4">—</span><p style="margin: 0; font-size: 17px; line-height: 1.9; color: #67717A">Would rather keep practising than actually publish</p></div>
+        <div style="display: flex; gap: 14px; align-items: flex-start"><span style="flex-shrink: 0; margin-top: 2px; color: #C5CDD4">—</span><p style="margin: 0; font-size: 17px; line-height: 1.9; color: #67717A">Cannot realistically secure building time over these two months</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 提供するもの -->
+<section data-screen-label="提供するもの" style="background: #EEF2F5">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+      <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">04</span>
+      <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">What participants get</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px">
+      <div style="background: #FBFBFA; padding: 36px 32px">
+        <h3 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 21px; font-weight: 700">Monthly credit grant</h3>
+        <p style="margin: 14px 0 0; font-size: 16px; line-height: 2; color: #4C555D">Credits for building, granted monthly on top of your own Manus Pro plan. Details are shared during selection.</p>
+      </div>
+      <div style="background: #FBFBFA; padding: 36px 32px">
+        <h3 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 21px; font-weight: 700">Weekly review with the Fellow</h3>
+        <p style="margin: 14px 0 0; font-size: 16px; line-height: 2; color: #4C555D">A 15-minute 1-on-1 with a Manus Fellow every week — from scoping to the pre-release check, alongside the decisions you make.</p>
+      </div>
+      <div style="background: #FBFBFA; padding: 36px 32px">
+        <h3 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 21px; font-weight: 700">The app is yours</h3>
+        <p style="margin: 14px 0 0; font-size: 16px; line-height: 2; color: #4C555D">You retain ownership of what you build. We always ask your permission before featuring it as a case study.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 参加の1週間 -->
+<section data-screen-label="参加の1週間" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+  <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+    <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">05</span>
+    <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">The rhythm — one week in the program</h2>
+  </div>
+  <div style="display: flex; flex-direction: column; border-top: 1px solid #E2E6E9">
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 26px 8px; border-bottom: 1px solid #E2E6E9; align-items: baseline">
+      <span style="flex-shrink: 0; width: 130px; font-family: 'Shippori Mincho B1', serif; font-size: 17px; font-weight: 700; color: #4F6171">15 min, weekly</span>
+      <p style="margin: 0; flex: 1; min-width: 240px; font-size: 16px; line-height: 1.9; color: #4C555D">A 1-on-1 with the Fellow, online. Review where the week landed and decide together what comes next.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 26px 8px; border-bottom: 1px solid #E2E6E9; align-items: baseline">
+      <span style="flex-shrink: 0; width: 130px; font-family: 'Shippori Mincho B1', serif; font-size: 17px; font-weight: 700; color: #4F6171">Build at your pace</span>
+      <p style="margin: 0; flex: 1; min-width: 240px; font-size: 16px; line-height: 1.9; color: #4C555D">Manus does the development work, so long hours are not required. Set aside time to direct and review, around your work and life.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 26px 8px; border-bottom: 1px solid #E2E6E9; align-items: baseline">
+      <span style="flex-shrink: 0; width: 130px; font-family: 'Shippori Mincho B1', serif; font-size: 17px; font-weight: 700; color: #4F6171">Milestones in person</span>
+      <p style="margin: 0; flex: 1; min-width: 240px; font-size: 16px; line-height: 1.9; color: #4C555D">Kickoff, mid-point demo and final showcase are held in person in Tokyo — all three can also be joined remotely.</p>
+    </div>
+  </div>
+  <div style="margin-top: 48px; padding: 36px 32px; background: #34322D; color: #FBFBFA">
+    <p style="margin: 0 0 16px; font-size: 13px; letter-spacing: .24em; color: #C5CDD4">What you will have when you finish</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 12px 40px; font-family: 'Shippori Mincho B1', serif; font-size: 19px; line-height: 1.9">
+      <span>◆ Your app, live in the world (at least one)</span>
+      <span>◆ The experience of driving it from idea to launch to iteration</span>
+      <span>◆ Your first feedback from real users</span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 スケジュール -->
+<section data-screen-label="スケジュール" style="background: #EEF2F5">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+      <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">06</span>
+      <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">Schedule</h2>
+    </div>
+    <div style="display: flex; flex-direction: column">
+      <div style="display: flex; gap: 28px; padding: 24px 0; border-bottom: 1px solid #D8DEE2; align-items: baseline">
+        <span style="flex-shrink: 0; width: 120px; font-family: 'Shippori Mincho B1', serif; font-size: 20px; font-weight: 800; color: #4F6171">Aug 20</span>
+        <div><p style="margin: 0; font-size: 17px; font-weight: 700">Applications close</p><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.9; color: #67717A">Selection interviews (15 min, online) run on a rolling basis as applications arrive — applying early helps.</p></div>
+      </div>
+      <div style="display: flex; gap: 28px; padding: 24px 0; border-bottom: 1px solid #D8DEE2; align-items: baseline">
+        <span style="flex-shrink: 0; width: 120px; font-family: 'Shippori Mincho B1', serif; font-size: 20px; font-weight: 800">Aug 26</span>
+        <div><p style="margin: 0; font-size: 17px; font-weight: 700">Results announced</p><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.9; color: #67717A">Everyone hears back by email, selected or not.</p></div>
+      </div>
+      <div style="display: flex; gap: 28px; padding: 24px 0; border-bottom: 1px solid #D8DEE2; align-items: baseline">
+        <span style="flex-shrink: 0; width: 120px; font-family: 'Shippori Mincho B1', serif; font-size: 20px; font-weight: 800">Aug 29</span>
+        <div><p style="margin: 0; font-size: 17px; font-weight: 700">Kickoff (Tokyo · remote OK)</p><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.9; color: #67717A">The two months begin. You start on your first app in week one.</p></div>
+      </div>
+      <div style="display: flex; gap: 28px; padding: 24px 0; border-bottom: 1px solid #D8DEE2; align-items: baseline">
+        <span style="flex-shrink: 0; width: 120px; font-family: 'Shippori Mincho B1', serif; font-size: 20px; font-weight: 800">Sep 27</span>
+        <div><p style="margin: 0; font-size: 17px; font-weight: 700">Mid-point demo (Tokyo · remote OK)</p><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.9; color: #67717A">Bring the two apps you shipped, and lock the direction of your signature piece.</p></div>
+      </div>
+      <div style="display: flex; gap: 28px; padding: 24px 0; align-items: baseline">
+        <span style="flex-shrink: 0; width: 120px; font-family: 'Shippori Mincho B1', serif; font-size: 20px; font-weight: 800">Oct 24</span>
+        <div><p style="margin: 0; font-size: 17px; font-weight: 700">Final showcase &amp; celebration (Tokyo · remote OK)</p><p style="margin: 6px 0 0; font-size: 15px; line-height: 1.9; color: #67717A">Present the signature piece you released, then celebrate finishing the two months together.</p></div>
+      </div>
+    </div>
+    <p style="margin: 24px 0 0; font-size: 15px; color: #67717A; line-height: 1.9">The program runs online. The three in-person sessions are held in Tokyo, and every one of them can be joined remotely.</p>
+  </div>
+</section>
+
+<!-- 07 応募条件 -->
+<section data-screen-label="応募条件" style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+  <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+    <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">07</span>
+    <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">Eligibility</h2>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 20px; max-width: 720px">
+    <div style="display: flex; gap: 16px; align-items: flex-start"><span style="flex-shrink: 0; font-family: 'Shippori Mincho B1', serif; color: #4F6171; font-weight: 800">1</span><p style="margin: 0; font-size: 17px; line-height: 2">You are on a Manus Pro plan (or plan to subscribe before the Aug 29 kickoff)</p></div>
+    <div style="display: flex; gap: 16px; align-items: flex-start"><span style="flex-shrink: 0; font-family: 'Shippori Mincho B1', serif; color: #4F6171; font-weight: 800">2</span><p style="margin: 0; font-size: 17px; line-height: 2">No coding experience required — never having programmed is completely fine</p></div>
+    <div style="display: flex; gap: 16px; align-items: flex-start"><span style="flex-shrink: 0; font-family: 'Shippori Mincho B1', serif; color: #4F6171; font-weight: 800">3</span><p style="margin: 0; font-size: 17px; line-height: 2">You can commit to the program for the full two months</p></div>
+  </div>
+  <p style="margin: 32px 0 0; max-width: 720px; font-size: 15px; line-height: 2; color: #67717A">* If you want to build an iOS app, you will need to register for the Apple Developer Program (paid). Review can take several days, so we recommend starting the process when you apply.</p>
+  <p style="margin: 12px 0 0; max-width: 720px; font-size: 15px; line-height: 2; color: #67717A">* The program is run in Japanese — the weekly 1-on-1s, the in-person sessions and the application form. Please apply if you are comfortable taking part in Japanese.</p>
+</section>
+
+<!-- 08 主催者 -->
+<section data-screen-label="主催者" style="background: #34322D; color: #FBFBFA">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 96px 32px">
+    <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 48px">
+      <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #91B3CF; letter-spacing: .2em">08</span>
+      <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">Your host</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex-shrink: 0">
+        <img src="../assets/hassy.jpg" alt="Hassy" style="width: 220px; height: 220px; object-fit: cover; border-radius: 4px; display: block">
+      </div>
+      <div style="flex: 1; min-width: 300px">
+        <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 28px; font-weight: 800; letter-spacing: .04em">Hassy<span style="margin-left: 16px; font-size: 16px; font-weight: 600; color: #C5CDD4">Manus Official Fellow</span></p>
+        <p style="margin: 24px 0 0; font-size: 16px; line-height: 2.2; color: #C5CDD4">Manus Best Friend, then Manus Official Fellow — the fourth in Japan. Runs an AI agent use-case lab. Former Google Apps Script instructor, Skywork.ai ambassador, Tableau DATA Saber.</p>
+        <p style="margin: 28px 0 0; font-family: 'Shippori Mincho B1', serif; font-size: 19px; line-height: 2; color: #FBFBFA">“The more makers there are, the more interesting AI gets.<br>I will be fully alongside all five of you, for your first one.”</p>
+        <a href="https://x.com/hassy_data" target="_blank" rel="noopener" class="link-light" style="display: inline-block; margin-top: 28px; font-size: 15px; letter-spacing: .08em; color: #91B3CF; border-bottom: 1px solid #91B3CF; padding-bottom: 2px">𝕏 @hassy_data</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 FAQ -->
+<section data-screen-label="FAQ" style="max-width: 800px; margin: 0 auto; padding: 96px 32px">
+  <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px">
+    <span style="font-family: 'Libre Baskerville', serif; font-size: 15px; color: #4F6171; letter-spacing: .2em">09</span>
+    <h2 style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 32px; font-weight: 700; letter-spacing: .06em">Frequently asked questions</h2>
+  </div>
+  <div style="display: flex; flex-direction: column; border-top: 1px solid #E2E6E9">
+    <details style="border-bottom: 1px solid #E2E6E9">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 4px; font-size: 17px; font-weight: 700; line-height: 1.8">Is it really okay to have no coding experience at all?<span class="faq-plus" style="flex-shrink: 0; color: #4F6171; font-size: 20px; font-weight: 400">＋</span></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 2; color: #4C555D">Yes. Manus does the development itself; your role is to decide what to build, direct it, and check the result. The Fellow supports you through the usual sticking points in the weekly 1-on-1.</p>
+    </details>
+    <details style="border-bottom: 1px solid #E2E6E9">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 4px; font-size: 17px; font-weight: 700; line-height: 1.8">How much time does it take per week?<span class="faq-plus" style="flex-shrink: 0; color: #4F6171; font-size: 20px; font-weight: 400">＋</span></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 2; color: #4C555D">The only fixed commitment is the weekly 15-minute 1-on-1. Building happens at your own pace, though reaching public release does assume you keep carving out time. We will talk through your available hours in the interview.</p>
+    </details>
+    <details style="border-bottom: 1px solid #E2E6E9">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 4px; font-size: 17px; font-weight: 700; line-height: 1.8">What do you look for in selection?<span class="faq-plus" style="flex-shrink: 0; color: #4F6171; font-size: 20px; font-weight: 400">＋</span></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 2; color: #4C555D">In a 15-minute online interview we ask about what you want to build, the time you can secure, and your intent to see it through to release. We weigh follow-through more heavily than existing skill.</p>
+    </details>
+    <details style="border-bottom: 1px solid #E2E6E9">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 4px; font-size: 17px; font-weight: 700; line-height: 1.8">How many credits do participants receive?<span class="faq-plus" style="flex-shrink: 0; color: #4F6171; font-size: 20px; font-weight: 400">＋</span></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 2; color: #4C555D">Selected participants receive credits monthly, separate from their own Pro plan. The specifics are shared during selection.</p>
+    </details>
+    <details style="border-bottom: 1px solid #E2E6E9">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 4px; font-size: 17px; font-weight: 700; line-height: 1.8">Can I take part if I live outside Tokyo?<span class="faq-plus" style="flex-shrink: 0; color: #4F6171; font-size: 20px; font-weight: 400">＋</span></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 2; color: #4C555D">Yes. The program is primarily online, and all three in-person sessions in Tokyo can be joined remotely.</p>
+    </details>
+    <details style="border-bottom: 1px solid #E2E6E9">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 4px; font-size: 17px; font-weight: 700; line-height: 1.8">I am not on Manus Pro yet. Can I still apply?<span class="faq-plus" style="flex-shrink: 0; color: #4F6171; font-size: 20px; font-weight: 400">＋</span></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 2; color: #4C555D">Yes, as long as you plan to subscribe before the kickoff on Aug 29.</p>
+    </details>
+    <details style="border-bottom: 1px solid #E2E6E9">
+      <summary style="display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 24px 4px; font-size: 17px; font-weight: 700; line-height: 1.8">What if I want to build an iOS app?<span class="faq-plus" style="flex-shrink: 0; color: #4F6171; font-size: 20px; font-weight: 400">＋</span></summary>
+      <p style="margin: 0; padding: 0 4px 24px; font-size: 16px; line-height: 2; color: #4C555D">You will need to register for the Apple Developer Program (paid). Review can take several days, so we recommend starting when you apply.</p>
+    </details>
+  </div>
+</section>
+
+<!-- 10 応募 -->
+<section id="apply" data-screen-label="応募フォーム" style="background: #EEF2F5">
+  <div style="max-width: 800px; margin: 0 auto; padding: 96px 32px 112px">
+    <p style="margin: 0 0 20px; text-align: center; font-family: 'Libre Baskerville', serif; font-size: 13px; letter-spacing: .32em; color: #4F6171">APPLY</p>
+    <h2 style="margin: 0; text-align: center; font-family: 'Shippori Mincho B1', serif; font-size: clamp(28px, 4.4vw, 40px); font-weight: 800; line-height: 1.6; letter-spacing: .04em; text-wrap: pretty">In two months,<br>your app will be out in the world.</h2>
+    <p style="margin: 24px 0 0; text-align: center; font-size: 16px; line-height: 2; color: #4C555D">5 seats · applications close <strong style="color: #4F6171">Aug 20 (Thu)</strong>. Interviews run on a rolling basis. The form below is in Japanese.</p>
+    <div style="margin-top: 48px">
+      <div data-when="form" hidden>
+        <iframe style="width: 100%; height: 1500px; border: none; background: #FBFBFA" title="Application form"></iframe>
+        <p style="margin: 16px 0 0; text-align: center; font-size: 15px; color: #67717A">If the form does not load, <a id="form-direct-link" href="#" target="_blank" rel="noopener">open it here</a>.</p>
+      </div>
+      <div data-when="noform">
+        <div style="border: 1px dashed #C5CDD4; background: #FBFBFA; padding: 64px 32px; text-align: center">
+          <p style="margin: 0; font-family: 'Shippori Mincho B1', serif; font-size: 19px; font-weight: 700; color: #8A939B">Application form (coming soon)</p>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 2; color: #8A939B">The application form is being prepared.<br>Please check back shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- フッター -->
+<footer style="background: #34322D; color: #C5CDD4">
+  <div style="max-width: 1080px; margin: 0 auto; padding: 72px 32px 128px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
+    <div>
+      <img src="../assets/manus-fellow-logo.png" alt="manus | fellow" style="height: 22px; width: auto; display: block; filter: invert(1)">
+      <p style="margin: 16px 0 0; font-family: 'Shippori Mincho B1', serif; font-size: 18px; font-weight: 700; color: #FBFBFA">Manus Shokunin Project<span style="margin-left: 10px; font-size: 12px; font-weight: 400; color: #8A939B">Cohort 1</span></p>
+      <p style="margin: 10px 0 0; font-size: 13px; letter-spacing: .06em">Hosted by Hassy (Manus Official Fellow)</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px">
+      <a href="https://x.com/hassy_data" target="_blank" rel="noopener" class="link-light" style="color: #91B3CF">Questions? DM @hassy_data on X</a>
+      <span style="font-size: 12px; color: #67717A">© 2026 Manus Shokunin Project</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 締切バー -->
+<div data-when="bar">
+  <div style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 60; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 12px 24px; background: #4F6171; color: #FBFBFA">
+    <span style="font-size: 15px; font-weight: 700; letter-spacing: .08em">Applications close Aug 20 · 5 seats</span>
+    <a href="#apply" class="btn-light" style="display: inline-block; background: #FBFBFA; color: #4F6171; font-size: 13px; font-weight: 700; letter-spacing: .1em; padding: 8px 20px; border-radius: 2px">Apply now</a>
+  </div>
+</div>
+
+</div>
+<script>
+// ===== 運用設定：公開前にここだけ書き換える =====
+const CONFIG = {
+  formEmbedUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdgVarcx8E5jsKSF2HKvZvJ9n5rak4-cu-lN-viohYYnKBguQ/viewform?embedded=true",
+  showDeadlineBar: true // 画面下部の締切バー
+};
+// ==============================================
+(function () {
+  const show = (sel, on) => document.querySelectorAll(sel).forEach(el => { el.hidden = !on; });
+  const form = (CONFIG.formEmbedUrl || "").trim();
+  if (form) {
+    document.querySelector('[data-when="form"] iframe').src = form;
+    document.getElementById('form-direct-link').href = form.replace(/[?&]embedded=true/, '');
+  }
+  show('[data-when="form"]', !!form);
+  show('[data-when="noform"]', !form);
+  show('[data-when="bar"]', CONFIG.showDeadlineBar !== false);
+})();
+</script>
+</body>
+</html>
