@@ -22,7 +22,7 @@
 /* 原本は日本語の本文が無い状態で作られたため、body の Inter に日本語グリフが無く
    OS既定のゴシックに落ちる。原本が定義済みの明朝を見出しに当てる。
    本文をゴシックのまま残すのは、14pxの長文を明朝にすると重くなるため。 */
-html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3,html[lang="ja"] blockquote,html[lang="ja"] .vertical-jp{font-family:"Noto Serif JP", serif}
+html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3,html[lang="ja"] blockquote,html[lang="ja"] .vertical-jp{font-family:"Shippori Mincho B1", serif}
 
 html[lang="ja"] .eyebrow{letter-spacing:.12em;text-transform:none}
 html[lang="ja"] .uppercase{text-transform:none}
