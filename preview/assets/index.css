@@ -17,13 +17,36 @@
 @media (max-width:480px){
   html[lang="ja"] h1{font-size:2.3rem}
   html[lang="ja"] h2{font-size:1.9rem}
+  /* 会期・定員・締切の3列。日本語＋16pxだと1列が狭く、
+     「2026.8.29」で折れて「— 10.24」が行頭に落ちる。2列にして幅を取る。 */
+  html[lang="ja"] dl.grid-cols-3{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 
 /* 原本は日本語の本文が無い状態で作られたため、body の Inter に日本語グリフが無く
    OS既定のゴシックに落ちる。原本が定義済みの明朝を見出しに当てる。
    本文をゴシックのまま残すのは、14pxの長文を明朝にすると重くなるため。 */
-html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3,html[lang="ja"] blockquote,html[lang="ja"] .vertical-jp{font-family:"Noto Serif JP", serif}
+html[lang="ja"] h1,html[lang="ja"] h2,html[lang="ja"] h3,html[lang="ja"] blockquote,html[lang="ja"] .vertical-jp{font-family:"Shippori Mincho B1", serif}
 
-html[lang="ja"] .eyebrow{letter-spacing:.12em;text-transform:none}
+/* 英語基準の文字サイズは日本語には小さい。漢字は画数が多く、明朝は横画が細い。
+   本文域（11〜15px）だけ引き上げ、見出しはデザインのまま残す。 */
+html[lang="ja"] .text-\[11px\]{font-size:12px}
+html[lang="ja"] .text-\[12px\]{font-size:13px}
+html[lang="ja"] .text-\[13px\]{font-size:15px}
+html[lang="ja"] .text-\[14px\]{font-size:16px}
+html[lang="ja"] .text-\[15px\]{font-size:17px}
+html[lang="ja"] .text-xs{font-size:13px}
+html[lang="ja"] .text-sm{font-size:16px}
+html[lang="ja"] .text-lg{font-size:19px}
+
+/* Tailwind の text-xs/sm/lg は行間も固定する。text-sm は 14px/20px = 1.43 で、
+   日本語には詰まりすぎる。leading-* が明示されている要素はデザインを尊重して触らない。 */
+html[lang="ja"] .text-xs:not([class*="leading-"]){line-height:1.7}
+html[lang="ja"] .text-sm:not([class*="leading-"]){line-height:1.8}
+html[lang="ja"] .text-lg:not([class*="leading-"]){line-height:1.8}
+
+html[lang="ja"] .text-\[10px\]{font-size:12px}
+/* .eyebrow は 0.6875rem（11px）。節見出しのラベル23箇所に効いていて、
+   日本語だと小さすぎる。 */
+html[lang="ja"] .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:none}
 html[lang="ja"] .uppercase{text-transform:none}
 html[lang="ja"] body{line-break:strict}
